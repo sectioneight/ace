@@ -201,7 +201,7 @@ console.log('# ace modes ---------');
 project.assumeAllFilesLoaded();
 [
     "css", "html", "javascript", "php", "python", "xml", "ruby", "java", "c_cpp",
-    "coffee", "perl", "csharp", "svg", "clojure", "scss"
+    "coffee", "perl", "csharp", "svg", "clojure", "scss", "json"
 ].forEach(function(mode) {
     console.log("mode " + mode);
     copy({
@@ -255,7 +255,7 @@ if (target == "bm") {
 
 console.log('# ace worker ---------');
 
-["javascript", "coffee"].forEach(function(mode) {
+["javascript", "coffee", "json"].forEach(function(mode) {
     console.log("worker for " + mode + " mode");
     var worker = copy.createDataObject();
     var workerProject = copy.createCommonJsProject([

@@ -19,7 +19,7 @@ Features
 * Drap and drop text using the mouse
 * Line wrapping
 * Unstructured / user code folding
-* Live syntax checker (currently JavaScript/CoffeeScript)
+* Live syntax checker (currently JavaScript/JSON/CoffeeScript)
 
 Take Ace for a spin!
 --------------------

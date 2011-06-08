@@ -17,6 +17,7 @@
       </td><td>
         <select id="doc" size="1">
           <option value="js">JavaScript</option>
+          <option value="json">JSON</option>
           <option value="plain">Plain Text</option>
           <option value="svg">SVG</option>
           <option value="html">HTML</option>
@@ -43,6 +44,7 @@
         <select id="mode" size="1">
           <option value="text">Plain Text</option>
           <option value="javascript">JavaScript</option>
+          <option value="json">JSON</option>
           <option value="xml">XML</option>
           <option value="html">HTML</option>
           <option value="css">CSS</option>
@@ -206,6 +208,13 @@
 }
 // A magic character: >> ぁ <<
 </script>
+<script type="text/editor" id="jsontext">{
+    "items": ["one", "two", 3],
+    "options": {
+        "value": 3.5,
+        "enabled": true
+    }
+}</script>
 
     <script type="text/editor" id="csstext">.text-layer {
     font-family: Monaco, "Courier New", monospace;

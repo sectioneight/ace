@@ -410,6 +410,7 @@ function setupSettingPanel(settingDiv, settingOpener, api, options) {
         mode: {
             text:       "Plain",
             javascript: "JavaScript",
+            json:       "JSON",
             coffee:     "CoffeeScript",
             html:       "HTML",
             css:        "CSS",

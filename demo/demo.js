@@ -50,6 +50,7 @@ exports.launch = function(env) {
     var EditSession = require("ace/edit_session").EditSession;
 
     var JavaScriptMode = require("ace/mode/javascript").Mode;
+    var JsonMode = require("ace/mode/json").Mode;
     var CssMode = require("ace/mode/css").Mode;
     var ScssMode = require("ace/mode/scss").Mode;
     var HtmlMode = require("ace/mode/html").Mode;
@@ -99,6 +100,10 @@ exports.launch = function(env) {
     docs.js = new EditSession(document.getElementById("jstext").innerHTML);
     docs.js.setMode(new JavaScriptMode());
     docs.js.setUndoManager(new UndoManager());
+
+    docs.json = new EditSession(document.getElementById("jsontext").innerHTML);
+    docs.json.setMode(new JsonMode());
+    docs.json.setUndoManager(new UndoManager());
 
     docs.css = new EditSession(document.getElementById("csstext").innerHTML);
     docs.css.setMode(new CssMode());
@@ -186,6 +191,7 @@ exports.launch = function(env) {
         css: new CssMode(),
         scss: new ScssMode(),
         javascript: new JavaScriptMode(),
+        json: new JsonMode(),
         python: new PythonMode(),
         php: new PhpMode(),
         java: new JavaMode(),
@@ -233,6 +239,9 @@ exports.launch = function(env) {
         var mode = session.getMode();
         if (mode instanceof JavaScriptMode) {
             modeEl.value = "javascript";
+        }
+        else if (mode instanceof JsonMode) {
+            modeEl.value = "json";
         }
         else if (mode instanceof CssMode) {
             modeEl.value = "css";
@@ -451,6 +460,8 @@ exports.launch = function(env) {
                 var mode = "text";
                 if (/^.*\.js$/i.test(file.name)) {
                     mode = "javascript";
+                } else if (/^.*\.json$/i.test(file.name)) {
+                    mode = "json";
                 } else if (/^.*\.xml$/i.test(file.name)) {
                     mode = "xml";
                 } else if (/^.*\.html$/i.test(file.name)) {
